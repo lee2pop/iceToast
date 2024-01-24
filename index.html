@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body{
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 20px 0;
+      color: #444;
+      font-size: 12px;
+    }
+    .demo-item{
+      background: #f8f8f8;
+      padding: 20px 40px;
+    }
+    p{
+      margin: 0;
+    }
+    p~p{
+      margin-top: 8px;
+    }
+    .muted{
+      color: #889;
+    }
+    .gray{
+      color: #aaa;
+    }
+    .c-code{
+      color: #007ACC;
+      letter-spacing: 1px;
+    }
+    .flr{
+      float: right;
+    }
+    .tac{
+      text-align: center;
+    }
+    .mb{
+      margin-bottom: 20px;
+    }
+    .tsm{
+      font-size: 14px;
+    }
+  </style>
+  <script src="./ice-toast.js"></script>
+</head>
+
+<body>
+  
+  <div class="muted tac mb">
+    <h3>iceToast - 1.4</h3>
+  </div>
+
+
+  <div class="demo-item mb">
+    <p class="muted">Basic usage <br/>基础用法</p>
+    <p class="tsm">
+      <button class="flr" onclick="iceToast.push( 'A massage' )">Run</button>
+      <span class="c-code">iceToast.push( 'A massage' )</span>
+    </p>
+    <p class="tsm">
+      <button class="flr" onclick="iceToast.push( 'Bootstrap - Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.' )">Run</button>
+      <span class="c-code">iceToast.push( 'long text ...' )</span>
+    </p>
+  </div>
+
+
+  <div class="demo-item mb">
+    <p class="muted">Basic usage, with params <br/>基础用法，附带参数</p>
+
+    <p class="tsm">
+      <button class="flr" onclick="iceToast.push( {words: 'A 10s massage', time: 10000 } )">Run</button>
+      <span class="c-code">iceToast.push( {words: 'A 10s massage', <b>time</b>: 10000 } )</span>
+    </p>
+
+    <p class="tsm">
+      <button class="flr" onclick="iceToast.push( {words: 'A blue massage', bgcolor: 'blue' } )">Run</button>
+      <span  class="c-code">iceToast.push( {words: 'A blue massage', <b>bgcolor</b>: 'blue' } )</span> 
+    </p>
+
+    <p class="tsm">
+      <button class="flr" onclick="iceToast.push( {words: 'A green massage', bgcolor: 'green' } )">Run</button>
+      <span class="c-code">iceToast.push( {words: 'A green massage', <b>bgcolor</b>: 'green' } )</span>
+    </p>
+
+    <p class="tsm">
+      <button class="flr" onclick="iceToast.push( {words: 'A red massage', bgcolor: 'red' } )">Run</button>
+      <span class="c-code">iceToast.push( {words: 'A red massage', <b>bgcolor</b>: 'red' } )</span>
+    </p>
+
+    <p class="tsm">
+      <button class="flr" onclick="iceToast.push( {words: 'A yellow massage', bgcolor: 'yellow' } )">Run</button>
+      <span class="c-code">iceToast.push( {words: 'A yellow massage', <b>bgcolor</b>: 'yellow' } )</span>
+    </p>
+    
+    <p class="tsm gray">
+      Default & Available [ bgcolor ]: default, blue, green, red, yellow 
+    </p>
+  </div>
+
+  <div class="demo-item mb">
+    <p class="muted">Custom bgColor <br/>自定义背景色</p>
+
+    <p class="tsm">
+      <span class="gray">First, edit your iceToast Object <br>首先，修改 iceToast 对象 </span><br>
+      <button class="flr" onclick="iceToast.baseConfig.colors.pink = '#FF8CB2'; iceToast.push(`baseConfig.colors.pink = '#FF8CB2'`)">Set</button>
+      <span  class="c-code">
+        iceToast.baseConfig.colors.pink = '#FF8CB2';
+      </span> 
+    </p>
+
+    <p class="tsm">
+      <span class="gray">Then use <br/>然后执行 </span><br>
+      <button class="flr" onclick="iceToast.push( {words: 'A pink massage', bgcolor: 'pink' } );">Run</button>
+      <span  class="c-code">iceToast.push( {words: 'A pink massage', bgcolor: 'pink' } )</span> 
+    </p>
+  </div>
+
+  <div class="demo-item mb">
+    <p class="muted">Global position <br/>全局位置</p>
+
+    <p class="tsm">
+      <button class="flr" onclick="iceToast.setPosition('top-right');iceToast.push('top-right')">Set</button>
+      <span  class="c-code">
+        iceToast.setPosition('top-right')
+      </span> 
+    </p>
+
+    <p class="tsm">
+      <button class="flr" onclick="iceToast.setPosition('top-center');iceToast.push('top-center')">Set</button>
+      <span  class="c-code">
+        iceToast.setPosition('top-center')
+      </span> 
+    </p>
+
+    <p class="tsm">
+      <button class="flr" onclick="iceToast.setPosition('bottom-right');iceToast.push('bottom-right')">Set</button>
+      <span class="c-code">
+        iceToast.setPosition('bottom-right')
+      </span>
+    </p>
+
+    <p class="tsm gray">
+      Available params: 'top-center', 'top-right', 'bottom-right'
+    </p>
+  </div>
+
+  <div class="demo-item mb muted tac tsm">
+    You can custom 'iceToast.baseConfig' as your default values from the source code.
+  </div>
+
+</body>
+
+</html>
